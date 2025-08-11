@@ -1,6 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
-    <uses-permission android:name="android.permission.INTERNET" />
-
+    <!-- For Camera access -->
+    <uses-feature android:name="android.hardware.camera.any" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!-- For reading external files -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <application
         android:name=".MainApplication"
         android:label="@string/app_name"
@@ -9,7 +12,6 @@
         android:allowBackup="false"
         android:theme="@style/AppTheme"
         android:supportsRtl="true">
-
         <!-- Main Activity (Launcher) -->
         <activity
             android:name=".MainActivity"
@@ -23,7 +25,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-
         <!-- Mobile Messenger Activity -->
         <activity
             android:name="com.genesys.messenger.MobileMessengerActivity"
@@ -33,6 +34,5 @@
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
-
     </application>
 </manifest>
